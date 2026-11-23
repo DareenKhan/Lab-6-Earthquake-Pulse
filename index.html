@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earthquake Pulse</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">EARTHQUAKE <span>PULSE</span></div>
+      <span class="source">USGS DATA</span>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="label">LIVE EARTHQUAKE DATA</p>
+        <h1>Recent earthquakes</h1>
+        <p>View recent earthquakes around the world. The colours and pulse animations change based on their magnitudes.</p>
+      </section>
+
+      <div class="cards">
+        <section class="featured" id="latest-card">
+          <div class="pulse" aria-hidden="true">
+            <div class="ring"></div><div class="ring second"></div>
+            <div class="circle"><strong class="value">--</strong><small>MAGNITUDE</small></div>
+          </div>
+          <p class="label">LATEST EARTHQUAKE</p>
+          <h2 class="place">Loading data...</h2>
+          <p class="time"></p>
+          <p class="level"></p>
+        </section>
+
+        <section class="featured high" id="strong-card">
+          <div class="pulse" aria-hidden="true">
+            <div class="ring"></div><div class="ring second"></div>
+            <div class="circle"><strong class="value">--</strong><small>MAGNITUDE</small></div>
+          </div>
+          <p class="label">LATEST MAGNITUDE 5.0+ EARTHQUAKE</p>
+          <h2 class="place">Loading data...</h2>
+          <p class="time"></p>
+          <p class="level"></p>
+        </section>
+      </div>
+
+      <section class="activity">
+        <div class="section-header">
+          <div>
+            <h2>Latest 5 earthquakes</h2>
+            <p>Reports from the past 24 hours.</p>
+          </div>
+          <button id="refresh" type="button">Refresh data</button>
+        </div>
+        <div class="filters">
+          <button id="all" class="active" type="button">All</button>
+          <button id="strong" type="button">Magnitude 2.5+</button>
+        </div>
+        <div id="earthquakes" class="list" aria-live="polite">Loading...</div>
+        <p id="updated" class="updated"></p>
+      </section>
+    </main>
+
+    <footer>Data from <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank" rel="noopener noreferrer">USGS</a>. Magnitude alone does not determine damage.</footer>
+  </div>
+</body>
+</html>
